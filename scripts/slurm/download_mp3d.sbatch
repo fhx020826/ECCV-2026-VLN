@@ -6,7 +6,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=4
 #SBATCH --mem=16G
-#SBATCH --partition=cpu
+#SBATCH --partition=compute
 
 # ============================================================
 # Download MP3D Habitat scenes (.glb) for VLN-CE / ETPNav
