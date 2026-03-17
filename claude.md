@@ -3,6 +3,18 @@
 ## Research Goal
 Reproduce ETPNav (TPAMI 2024) as baseline in VLN-CE, then extend with Diffusion Policy for continuous waypoint prediction → DifNav, submitted to ECCV 2026.
 
+## Environment Notes
+- Default outbound proxy is now local Clash instead of SSH-forwarded `17897`
+- Local Clash ports:
+  - HTTP `127.0.0.1:18990`
+  - SOCKS5 `127.0.0.1:18991`
+  - Mixed `127.0.0.1:18993`
+- Shell shortcuts loaded from `~/.bashrc`:
+  - `clash`
+  - `proxy`
+  - `unproxy`
+  - `proxy-status`
+
 ## Repository Layout
 ```
 ECCV-2026/

@@ -1,11 +1,18 @@
 # User Preferences & Key Commands
 
 ## Environment
-- Proxy port: 17897 (local SSH forward)
-  - `export HTTPS_PROXY=http://127.0.0.1:17897`
-  - curl: `curl --proxy http://127.0.0.1:17897`
-  - wget: `HTTPS_PROXY=http://127.0.0.1:17897 wget ...`
-  - gdown: `HTTPS_PROXY=http://127.0.0.1:17897 python -m gdown ...`
+- Primary local proxy: Clash on localhost
+  - HTTP: `127.0.0.1:18990`
+  - SOCKS5: `127.0.0.1:18991`
+  - Redir: `127.0.0.1:18992`
+  - Mixed: `127.0.0.1:18993`
+  - Controller: `127.0.0.1:19090`
+  - Start: `clash`
+  - Enable env proxy: `proxy`
+  - Disable env proxy: `unproxy`
+  - Check env proxy: `proxy-status`
+- Legacy SSH-forward proxy: `17897`
+  - Keep only as fallback when local Clash is unavailable
 - Conda base: `~/anaconda3`
 - Key envs:
   - `vlnce`: Python 3.6, habitat-sim 0.1.7 — ETPNav training
@@ -31,7 +38,8 @@ scir-watch <node> gpustat              # GPU usage on specific node
 
 ## Git / GitHub
 - Remote: `https://github.com/fhx020826/ECCV-2026-VLN.git`
-- Push via proxy: `HTTPS_PROXY=http://127.0.0.1:17897 git push origin main`
+- Push via local Clash: `HTTPS_PROXY=http://127.0.0.1:18990 git push origin main`
+- `git ls-remote` via local Clash: `git -c http.proxy=http://127.0.0.1:18990 -c https.proxy=http://127.0.0.1:18990 ls-remote <repo>`
 - Only commit code; never commit weights/datasets/logs
 
 ## Communication Style
