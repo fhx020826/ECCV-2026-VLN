@@ -1,0 +1,48 @@
+# Data and checkpoints (large files, do not commit)
+data/
+logs/
+
+# Habitat-lab external dependency
+habitat-lab/
+
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.egg
+.eggs/
+dist/
+build/
+*.so
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Temp / editor
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/
+*.tmp
+*.bak
+
+# Result files and intermediate outputs
+*.json.gz
+result*.json
+*.out
+*.err
+eval_*/
+output_*/
+
+# Model weights
+*.pt
+*.pth
+*.safetensors
+*.bin
+*.ckpt
+
+# Misc
+nohup.out
