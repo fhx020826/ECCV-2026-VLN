@@ -38,12 +38,13 @@ Conda env: `pamflownav` (Python 3.9)
 
 ### Current Eval Job
 
-- **Job ID**: 242 (submitted 2026-03-21)
+- **Job ID**: 288 (submitted 2026-03-21)
 - **Node**: gpu18 (4× nvidia_a100_80gb_pcie)
 - **Estimated start**: 2026-03-22 09:19 AM (waiting for gpu18 to free up)
 - **Script**: `scripts/slurm/eval_janusvln_val_unseen.sbatch`
 - **Checkpoint**: `data/checkpoints/misstl/JanusVLN_Extra`
 - **Output**: `logs/eval_extra_unseen_{timestamp}/result.json`
+- **Note**: Job 271 (1×H100) was cancelled — too slow (~47s/episode × 1839 = 24h, exceeds 8h limit)
 
 ### SLURM Config (corrected)
 
@@ -114,7 +115,9 @@ Conda env: `pamflownav` (Python 3.9)
 | 2026-03-20 | flash-attn: CUDA_HOME not set | Load cuda/12.4.1 module |
 | 2026-03-20 | flash-attn: GitHub download blocked | Use proxy http://127.0.0.1:18990 |
 | 2026-03-21 | SLURM CPU limit: 32 > 16 | Change to ntasks-per-node=1, cpus-per-task=16 |
-| 2026-03-21 | All A100 nodes full after maintenance | Job 242 queued for tomorrow |
+| 2026-03-21 | All A100 nodes full after maintenance | Job 288 queued for tomorrow (gpu18) |
+| 2026-03-21 | Triton 0 active drivers on H100 | 3-step fix: prebuilt flash-attn wheel + remove cuda/12.4.1 module + delete stale triton-3.1.0.dist-info |
+| 2026-03-21 | gpu05 shows 7 free GPUs but only 2 CfgTRES slots | scir-watch shows physical GPUs, not SLURM-schedulable TRES |
 
 ---
 
